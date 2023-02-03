@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_seeMoreNowPlayingFragment"
+            app:destination="@id/seeMoreNowPlayingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="query"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.detail.MovieDetailFragment"
+        android:label="MovieDetailFragment" >
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_playVideoFragment"
+            app:destination="@id/playVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.tvshow.TvShowFragment"
+        android:label="fragment_tv_show"
+        tools:layout="@layout/fragment_tv_show" >
+        <action
+            android:id="@+id/action_tvShowFragment_to_tvShowDetailFragment"
+            app:destination="@id/tvShowDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowDetailFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.tvshow.detail.TvShowDetailFragment"
+        android:label="fragment_tv_show_detail"
+        tools:layout="@layout/fragment_tv_show_detail" >
+        <argument
+            android:name="tvId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_tvShowDetailFragment_to_playVideoFragment"
+            app:destination="@id/playVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playVideoFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.playvideo.PlayVideoFragment"
+        android:label="PlayVideoFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeMoreNowPlayingFragment"
+        android:name="com.ariefrahmanfajri.pilem.presentation.home.nowplaying.SeeMoreNowPlayingFragment"
+        android:label="SeeMoreNowPlayingFragment" >
+        <action
+            android:id="@+id/action_seeMoreNowPlayingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+</navigation>

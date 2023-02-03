@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.home.nowplaying.SeeMoreNowPlayingFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryContainer"
+            android:elevation="8dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            android:text="Now Playing"
+            android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNowPlayingMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+</layout>

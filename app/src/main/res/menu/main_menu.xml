@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_home_24"
+        android:enabled="true" />
+
+    <item
+        android:id="@+id/tvShowFragment"
+        android:title="Tv"
+        android:icon="@drawable/ic_explore_24"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/settingFragment"
+        android:title="Setting"
+        android:icon="@drawable/ic_settings_24"
+        android:enabled="true"/>
+</menu>

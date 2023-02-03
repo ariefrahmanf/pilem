@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="review"
+            type="com.ariefrahmanfajri.pilem.domain.model.ReviewItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/tvReviewerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            android:text="@{review.author}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            tools:text="Arief Rahman" />
+
+        <ImageView
+            android:id="@+id/ivStar"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_star_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvReviewerName" />
+
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{review.authorDetails.rating.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/ivStar"
+            app:layout_constraintStart_toEndOf="@id/ivStar"
+            app:layout_constraintTop_toTopOf="@id/ivStar"
+            android:textSize="10sp"
+            tools:text="8.0" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="12sp"
+            android:text="@{review.content}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivStar"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            tools:text="No matter what you say about the story, you can't deny the fact that **James Cameron** managed to make eyes drool for 3hrs and 20mins. A movie that's meant to be watched on the biggest screen!." />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@{review.createdAt}"
+            android:textColor="#AAAAAA"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContent"
+            tools:text="1 hari yang lalu"
+            android:textAppearance="@style/TextAppearancePilem.BodySmall"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            android:layout_marginTop="4dp"
+            android:background="#EFEFEF"
+            android:layout_marginHorizontal="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
